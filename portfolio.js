@@ -1,6 +1,7 @@
 "use strict";
 import Footer from "./js_modules/footer.js";
-import getFileName from "./js_modules/handler.js";
+import getFileName, { grabElement } from "./js_modules/handler.js";
+import animate from './js_modules/animation.js'
 
 (() => {
   const codingLanguages = ["HTML", "CSS", "JavaScript"];
@@ -14,22 +15,26 @@ import getFileName from "./js_modules/handler.js";
   ];
   
   new Footer(codingLanguages, "footer-languages");
+
   switch (currentFile) {
     case "index.html":
     case "":
       import("./js_modules/githubFetch.js").then((module) => {
         new module.GithubFetch(GITHUB_URL, "profile-image", "my-name");
       });
+      animate("#nav", "#animate")
       break;
     case "contact.html":
       import("./js_modules/formControl.js").then((module) => {
         new module.FormControl("contact-form", "form-button");
       });
+      animate("#nav", "#animate");
       break;
     case "about.html":
       import("./js_modules/map.js").then((module) => {
         new module.Map(cities, "prev", "next", "map");
       });
+      animate("#nav", "#animate");
       break;
     default:
       throw new Error(`Unexpected pathname at window.location: ${currentFile}`);
