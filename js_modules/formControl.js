@@ -12,7 +12,7 @@ export class FormControl {
     const { button, printValues, filteredNodes, formName, checkFields } = this;
     button.disabled = true;
     const form = document.forms[formName];
-    form.addEventListener('submit', printValues);
+    form.addEventListener("submit", printValues);
     for (let element of filteredNodes) {
       element.addEventListener("input", checkFields);
     }
