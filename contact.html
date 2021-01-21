@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lemonada"
+      rel="stylesheet"
+    />
+    <link href="./css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="page-wrapper">
+      <div class="card">
+        <form method="get" name="contact-form">
+          <fieldset>
+            <legend><b>Personal details</b></legend>
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name"
+              required="true"
+            />
+
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name"
+              required="required"
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              required="required"
+            />
+          </fieldset>
+          <fieldset>
+            <legend><b>Your Comment</b></legend>
+            <label for="comment">Add your comment:</label>
+            <textarea
+              id="subject"
+              name="comment"
+              placeholder="Your comment"
+              required="required"
+            ></textarea>
+
+            <label for="hours"
+              >Which one is the best hour to contact you?</label
+            >
+            <select id="hours" name="never" required>
+              <option disabled selected value=""> Select an Option</option>
+              <option value="08-10">08 - 10 </option>
+              <option value="10-12">10 - 12</option>
+              <option value="12-14">12 - 14 </option>
+              <option value="14-16">14 - 16</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <button type="submit" class="button" id="form-button">
+              Submit
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <span id="footer-languages"></span>
+      <div>Israel Tech Challenge</div>
+    </footer>
+    <script type="module" src="./portfolio.js"></script>
+  </body>
+</html>
