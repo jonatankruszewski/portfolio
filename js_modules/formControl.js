@@ -45,8 +45,7 @@ export class FormControl {
   };
 
   printValues = (event) => {
-    event.preventDefault();
-    const { filteredNodes } = this;
+        const { filteredNodes } = this;
     for (let element of filteredNodes) {
       console.log(`${element.name}: ${element.value}`);
     }
