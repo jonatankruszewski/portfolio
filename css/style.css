@@ -27,9 +27,8 @@ iframe {
 
 html,
 body {
-  height: 100%;
+  height: auto !important;
 }
-
 
 .site-content {
   display: flex;
@@ -48,6 +47,8 @@ body {
 
 .page-wrapper {
   display: flex;
+  flex:1;
+  justify-content: center;
 }
 
 iframe {
