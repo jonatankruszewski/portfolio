@@ -5,7 +5,7 @@ import animate from './js_modules/animation.js'
 
 (() => {
   const codingLanguages = ["HTML", "CSS", "JavaScript"];
-  const GITHUB_URL = "https://api.github.com/users/jonatankruszewskiITC";
+  const GITHUB_URL = "https://api.github.com/users/jonatankruszewski";
   const currentFile = getFileName();
   const cities = [
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.26483378695!2d-58.503338591054835!3d-34.61580373603523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sil!4v1590927131591!5m2!1sen!2sil",
