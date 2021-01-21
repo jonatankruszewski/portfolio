@@ -1,10 +1,10 @@
 export class Map {
-  constructor(cities) {
+  constructor(cities, prevButton, nextButton, mapDiv) {
     this.cities = cities;
     this.currentIndex = 0;
-    this.prevBtn = this.grabElement("prev");
-    this.nextBtn = this.grabElement("next");
-    this.map = this.grabElement("map");
+    this.prevBtn = this.grabElement(prevButton);
+    this.nextBtn = this.grabElement(nextButton);
+    this.map = this.grabElement(mapDiv);
     this.init();
   }
 

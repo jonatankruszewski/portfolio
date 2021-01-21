@@ -1,10 +1,11 @@
 "use strict";
+import { grabElement} from './handler.js'
 export class FormControl {
   constructor(formName, buttonId) {
     this.formName = formName;
     this.nodeList = this.grabFormElements(formName);
     this.filteredNodes = this.filterNodes();
-    this.button = this.grabElement(buttonId);
+    this.button = grabElement(buttonId);
     this.init();
   }
 
@@ -33,12 +34,6 @@ export class FormControl {
       let n = element.nodeName.toLowerCase();
       return n === "input" || n === "textarea" || n === "select";
     });
-  }
-
-  grabElement(element) {
-    const domElement = document.getElementById(element);
-    if (domElement) return domElement;
-    else throw new Error(`Couldn't grab an element with ID: ${element}`);
   }
 
   checkFields = (e) => {

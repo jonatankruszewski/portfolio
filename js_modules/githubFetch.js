@@ -1,4 +1,5 @@
 "use strict";
+import { grabElement } from "./handler.js";
 export class GithubFetch {
   constructor(url, profileImageID, userNameID) {
     this.url = url;
@@ -8,26 +9,18 @@ export class GithubFetch {
     this.init();
   }
 
-  grabElement(element) {
-    const domElement = document.getElementById(element);
-    if (domElement) return domElement;
-    else throw new Error(`Couldn't grab an element with ID: ${element}`);
-  }
-
   replaceImage = () => {
-    const { grabElement, profileImageID, fetchedInfo, spinElement } = this;
+    const { profileImageID, fetchedInfo, animate } = this;
     try {
       const profileImage = grabElement(profileImageID);
       profileImage.src = fetchedInfo.avatar_url;
-      profileImage.addEventListener("click", spinElement);
+      profileImage.addEventListener("click", animate);
     } catch (error) {
       console.warn(error);
     }
   };
 
-  spinElement = (e) => {
-    e.target.removeEventListener("click", this.spinElement);
-    e.target.classList.add("spin");
+  animate = (e) => {
     setTimeout(() => {
       e.target.classList.remove("spin");
       e.target.addEventListener("click", this.spinElement);
@@ -35,19 +28,12 @@ export class GithubFetch {
   };
 
   replaceUserName = () => {
-    const { grabElement, userNameID, fetchedInfo } = this;
-    const userName = grabElement(userNameID);
+    const { userNameID, fetchedInfo } = this;
     try {
+      const userName = grabElement(userNameID);
       userName.innerText = fetchedInfo.name;
-    } catch {
-      const newUserName = document.createElement("h1");
-      newUserName.innerText = fetchedInfo.name;
-      const card = document.getElementById("card");
-      try {
-        card.insertBefore(newUserName, card.childNodes[1]);
-      } catch (error) {
-        console.warn(error);
-      }
+    } catch (error) {
+      console.warn(error);
     }
   };
 

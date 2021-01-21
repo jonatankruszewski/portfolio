@@ -1,4 +1,6 @@
 "use strict";
+
+import { grabElement } from "./handler.js";
 export default class Footer {
   constructor(languages, footerClass) {
     this.footerClass = footerClass;
@@ -27,27 +29,12 @@ export default class Footer {
     this.composedString = composedString;
   }
 
-  grabElement(element) {
-    const domElement = document.getElementById(element);
-    if (domElement) {
-      return domElement;
-    } else {
-      throw new Error(`Couldn't grab an element with ID: ${element}`);
-    }
-  }
-
   setFooter() {
-    let { composedString, footerClass, grabElement } = this;
+    let { composedString, footerClass } = this;
     try {
       grabElement(footerClass).innerText = composedString;
     } catch (error) {
-      let footerText = (document.createElement("p").innerText = composedString);
-      let footer = document.getElementsByTagName("footer")[0];
-      if (footer) {
-        footer.append(footerText);
-      } else {
-        throw new Error(error);
-      }
+      console.error(error);
     }
   }
 }
