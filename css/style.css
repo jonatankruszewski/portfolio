@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-.site-content {
+.flex-column {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1rem;
-  min-height: max-content;
+  align-items: center;
+  width:100%;
 }
 
 body {
@@ -15,22 +15,20 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
-.page-wrapper {
+.flex-column {
   display: flex;
-  flex:1;
-  align-items: center;
+  flex: 1;
   flex-direction: column;
 }
 
-.flex-1{
-  flex:1;
-    min-height: 700px!important;
-
+.flex-1 {
+  flex: 1;
+  min-height: 700px !important;
 }
-iframe{
+iframe {
   height: 100%;
-  width:100%;
-
+  width: 100%;
 }
