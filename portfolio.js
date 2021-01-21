@@ -1,11 +1,11 @@
 "use strict";
-import { Footer } from "./js_modules/footer.js";
-import { Handler } from "./js_modules/handler.js";
+import Footer from "./js_modules/footer.js";
+import getFileName from "./js_modules/handler.js";
 
 (() => {
   const codingLanguages = ["HTML", "CSS", "JavaScript"];
   const GITHUB_URL = "https://api.github.com/users/jonatankruszewskiITC";
-  const currentFile = new Handler().fileName;
+  const currentFile = getFileName();
 
   new Footer(codingLanguages, "footer-languages");
   switch (currentFile) {
@@ -33,4 +33,3 @@ import { Handler } from "./js_modules/handler.js";
       throw new Error(`Unexpected pathname at window.location: ${currentFile}`);
   }
 })();
-
