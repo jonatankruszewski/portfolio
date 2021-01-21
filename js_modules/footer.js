@@ -1,5 +1,5 @@
 "use strict";
-export class Footer {
+export default class Footer {
   constructor(languages, footerClass) {
     this.footerClass = footerClass;
     this.languages = languages;
