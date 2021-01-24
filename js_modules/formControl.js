@@ -1,5 +1,5 @@
 "use strict";
-import { grabElement} from './handler.js'
+import { grabElement } from "./handler.js";
 export class FormControl {
   constructor(formName, buttonId) {
     this.formName = formName;
@@ -45,9 +45,7 @@ export class FormControl {
   };
 
   printValues = (event) => {
-        const { filteredNodes } = this;
-    for (let element of filteredNodes) {
-      console.log(`${element.name}: ${element.value}`);
-    }
+    const form = document.forms[this.formName];
+    form.reset();
   };
 }
