@@ -11,4 +11,4 @@ const grabElement = (element) => {
 };
 
 export default getFileName;
-export { grabElement}
+export { grabElement }

@@ -44,9 +44,7 @@ export class FormControl {
     );
   };
 
-  printValues = (event) => {
-    event.preventDefault();
-    const form = document.forms[this.formName];
-    form.reset();
+  printValues = () => {
+    const form = document.forms[this.formName].reset();
   };
 }
